@@ -1,7 +1,7 @@
 # docker build -t goPost .
 # docker run -it goPost
 
-FROM golang:1.15.10-alpine3.13 AS builder
+FROM golang:1.22.2-alpine3.19 AS builder
 
 # Install git.
 # Git is required for fetching the dependencies.
