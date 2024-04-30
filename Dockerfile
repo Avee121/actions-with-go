@@ -10,6 +10,10 @@ RUN apk update && apk add --no-cache git
 RUN mkdir /pro
 ADD ./usePost05.go /pro/
 WORKDIR /pro
+COPY go.mod .
+COPY go.sum .
+COPY usePost05.go .
+RUN go install ./...
 RUN go build -o server usePost05.go
 
 FROM alpine:latest
